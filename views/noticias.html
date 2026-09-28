@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Listado de noticias de NEWS POLI.">
+  <title>NEWS POLI | Listado de noticias</title>
+  <link rel="stylesheet" href="../assets/styles/noticias.css">
+</head>
+<body class="np-page">
+  <header class="np-header">
+    <div class="np-shell np-header__inner">
+      <a class="np-brand" href="#noticias" aria-label="NEWS POLI - Noticias">
+        <span class="np-brand__mark" aria-hidden="true">N</span>
+        <span class="np-brand__name">NEWS POLI</span>
+      </a>
+
+      <button class="np-nav-toggle" type="button" aria-expanded="false" aria-controls="np-main-nav">
+        <span class="np-nav-toggle__label">Menú</span>
+        <span class="np-nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="np-nav" id="np-main-nav" aria-label="Navegación principal">
+        <a class="np-nav__link" href="#inicio" data-pending-link>Inicio</a>
+        <a class="np-nav__link is-active" href="#noticias" data-view="news">Noticias</a>
+        <a class="np-nav__link" href="#favoritos" data-view="favorites">Favoritos</a>
+        <a class="np-nav__link" href="#contacto" data-pending-link>Contacto</a>
+        <a class="np-nav__cta" href="#np-more-news">EXPLORAR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="np-main">
+    <div class="np-shell">
+      <section class="np-intro" aria-labelledby="np-page-title">
+        <h1 class="np-intro__title" id="np-page-title">Últimas noticias</h1>
+        <p class="np-intro__subtitle" id="np-page-subtitle">Información relevante, actual y cercana.</p>
+      </section>
+
+      <section class="np-toolbar" aria-label="Buscar y filtrar noticias">
+        <label class="np-search" for="np-news-search">
+          <span class="np-search__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          </span>
+          <span class="np-visually-hidden">Buscar noticias</span>
+          <input id="np-news-search" class="np-search__input" type="search" placeholder="Buscar noticias..." autocomplete="off">
+        </label>
+
+        <div class="np-filters" role="group" aria-label="Filtrar por categoría">
+          <button class="np-filter is-active" type="button" data-category="Todas" aria-pressed="true">Todas</button>
+          <button class="np-filter" type="button" data-category="Tecnología" aria-pressed="false">Tecnología</button>
+          <button class="np-filter" type="button" data-category="Educación" aria-pressed="false">Educación</button>
+          <button class="np-filter" type="button" data-category="Turismo" aria-pressed="false">Turismo</button>
+          <button class="np-filter" type="button" data-category="Comercio" aria-pressed="false">Comercio</button>
+        </div>
+      </section>
+
+      <section class="np-status" aria-live="polite" aria-atomic="true">
+        <span id="np-results-label"></span>
+      </section>
+
+      <section class="np-editorial" id="np-editorial" aria-label="Noticias destacadas">
+        <div class="np-featured-slot" id="np-featured-slot"></div>
+        <div class="np-secondary-list" id="np-secondary-list"></div>
+      </section>
+
+      <section class="np-more" id="np-more-news" aria-labelledby="np-more-title">
+        <div class="np-section-heading">
+          <h2 class="np-section-heading__title" id="np-more-title">Más noticias</h2>
+          <span class="np-section-heading__line" aria-hidden="true"></span>
+        </div>
+        <div class="np-news-grid" id="np-news-grid"></div>
+      </section>
+
+      <section class="np-empty" id="np-empty-state" hidden aria-live="polite">
+        <div class="np-empty__icon" aria-hidden="true">N</div>
+        <h2 class="np-empty__title">No encontramos noticias</h2>
+        <p class="np-empty__text">Prueba con otra búsqueda, cambia la categoría o vuelve al listado general.</p>
+        <button class="np-empty__button" id="np-reset-filters" type="button">Ver todas las noticias</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="np-footer">
+    <div class="np-shell np-footer__inner">
+      <div>
+        <p class="np-footer__brand">NEWS POLI</p>
+        <p class="np-footer__tagline">Información que importa.</p>
+      </div>
+      <div class="np-footer__meta">
+        <p>© 2026 News Poli</p>
+        <p>Proyecto académico · Desarrollo Front-end</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="np-modal" id="np-preview-modal" aria-hidden="true">
+    <div class="np-modal__backdrop" data-modal-close></div>
+    <section class="np-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="np-modal-title" aria-describedby="np-modal-preview">
+      <button class="np-modal__close" type="button" aria-label="Cerrar vista previa" data-modal-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <img class="np-modal__image" id="np-modal-image" src="" alt="">
+      <div class="np-modal__body">
+        <p class="np-modal__category" id="np-modal-category"></p>
+        <h2 class="np-modal__title" id="np-modal-title"></h2>
+        <p class="np-modal__author" id="np-modal-author"></p>
+        <p class="np-modal__preview" id="np-modal-preview"></p>
+        <a class="np-modal__read" id="np-modal-read" href="#">Leer noticia <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="np-toast" id="np-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <div class="np-noscript">NEWS POLI necesita JavaScript habilitado para cargar, buscar y filtrar las noticias.</div>
+  </noscript>
+
+  <script src="../assets/js/noticias.js" defer></script>
+</body>
+</html>

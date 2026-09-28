@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1200" viewBox="0 0 1440 1200">
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="14" flood-opacity=".10"/>
+  </filter>
+</defs>
+
+<!-- Background -->
+<rect width="1440" height="1200" fill="#F5F5F5"/>
+
+<!-- Header -->
+<rect x="0" y="0" width="1440" height="92" fill="#F5F5F5"/>
+<line x1="72" y1="91" x2="1368" y2="91" stroke="#C0C0C0" stroke-width="1"/>
+
+<!-- Logo -->
+<rect x="72" y="25" width="42" height="42" rx="8" fill="#25262A"/>
+<text x="93" y="55" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="700" fill="#F5F5F5">N</text>
+<text x="128" y="53" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="700" fill="#25262A">NEWS POLI</text>
+
+<!-- Nav -->
+<text x="850" y="54" font-family="Arial, sans-serif" font-size="15" fill="#25262A">Inicio</text>
+<text x="920" y="54" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#25262A">Noticias</text>
+<text x="1020" y="54" font-family="Arial, sans-serif" font-size="15" fill="#25262A">Favoritos</text>
+<text x="1125" y="54" font-family="Arial, sans-serif" font-size="15" fill="#25262A">Contacto</text>
+<rect x="1230" y="28" width="138" height="38" rx="19" fill="#25262A"/>
+<text x="1299" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#F5F5F5">EXPLORAR</text>
+
+<!-- Hero title -->
+<text x="72" y="162" font-family="Georgia, Times New Roman, serif" font-size="48" font-weight="700" fill="#25262A">Últimas noticias</text>
+<text x="72" y="197" font-family="Arial, sans-serif" font-size="16" fill="#66686D">Información relevante, actual y cercana.</text>
+
+<!-- Filters -->
+<rect x="72" y="225" width="1296" height="58" rx="10" fill="#D3D3D3"/>
+<rect x="88" y="237" width="250" height="34" rx="17" fill="#F5F5F5"/>
+<text x="110" y="259" font-family="Arial, sans-serif" font-size="13" fill="#77797E">Buscar noticias...</text>
+<text x="700" y="260" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#25262A">Todas</text>
+<text x="770" y="260" font-family="Arial, sans-serif" font-size="13" fill="#55575B">Tecnología</text>
+<text x="875" y="260" font-family="Arial, sans-serif" font-size="13" fill="#55575B">Educación</text>
+<text x="970" y="260" font-family="Arial, sans-serif" font-size="13" fill="#55575B">Turismo</text>
+<text x="1040" y="260" font-family="Arial, sans-serif" font-size="13" fill="#55575B">Comercio</text>
+
+<!-- Featured card -->
+<rect x="72" y="315" width="820" height="365" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="92" y="335" width="440" height="325" rx="11" fill="#C0C2C9"/>
+<text x="312" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5E6065">IMAGEN DE NOTICIA DESTACADA</text>
+
+<text x="562" y="368" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#66686D">TECNOLOGÍA · HOY</text>
+<text x="562" y="415" font-family="Georgia, Times New Roman, serif" font-size="31" font-weight="700" fill="#25262A">La tecnología transforma</text>
+<text x="562" y="451" font-family="Georgia, Times New Roman, serif" font-size="31" font-weight="700" fill="#25262A">la forma de aprender</text>
+<text x="562" y="494" font-family="Arial, sans-serif" font-size="14" fill="#66686D">Nuevas herramientas digitales están</text>
+<text x="562" y="516" font-family="Arial, sans-serif" font-size="14" fill="#66686D">cambiando la experiencia educativa.</text>
+<text x="562" y="568" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#25262A">Leer noticia  →</text>
+<text x="815" y="568" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#25262A">♡</text>
+
+<!-- Side cards -->
+<rect x="920" y="315" width="448" height="170" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="940" y="335" width="145" height="130" rx="10" fill="#D3D3D3"/>
+<text x="1012" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#66686D">IMAGEN</text>
+<text x="1110" y="355" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#66686D">TURISMO</text>
+<text x="1110" y="385" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">Destinos que vale</text>
+<text x="1110" y="408" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">la pena descubrir</text>
+<text x="1110" y="445" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#25262A">Ver más →</text>
+
+<rect x="920" y="510" width="448" height="170" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="940" y="530" width="145" height="130" rx="10" fill="#C0C0C0"/>
+<text x="1012" y="600" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#66686D">IMAGEN</text>
+<text x="1110" y="550" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#66686D">EDUCACIÓN</text>
+<text x="1110" y="580" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">Ideas para aprender</text>
+<text x="1110" y="603" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">de nuevas maneras</text>
+<text x="1110" y="640" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#25262A">Ver más →</text>
+
+<!-- More news -->
+<text x="72" y="742" font-family="Georgia, Times New Roman, serif" font-size="30" font-weight="700" fill="#25262A">Más noticias</text>
+
+<g>
+<rect x="72" y="770" width="400" height="270" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="92" y="790" width="360" height="125" rx="10" fill="#C0C2C9"/>
+<text x="272" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#5E6065">IMAGEN</text>
+<text x="92" y="946" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#66686D">COMERCIO</text>
+<text x="92" y="973" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">Nuevas iniciativas impulsan</text>
+<text x="92" y="997" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">el comercio local</text>
+<text x="92" y="1025" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#25262A">Ver noticia →</text>
+</g>
+
+<g>
+<rect x="520" y="770" width="400" height="270" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="540" y="790" width="360" height="125" rx="10" fill="#D3D3D3"/>
+<text x="720" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#66686D">IMAGEN</text>
+<text x="540" y="946" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#66686D">TECNOLOGÍA</text>
+<text x="540" y="973" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">Innovación que llega</text>
+<text x="540" y="997" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">a nuevos sectores</text>
+<text x="540" y="1025" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#25262A">Ver noticia →</text>
+</g>
+
+<g>
+<rect x="968" y="770" width="400" height="270" rx="16" fill="#FFFFFF" filter="url(#shadow)"/>
+<rect x="988" y="790" width="360" height="125" rx="10" fill="#C0C0C0"/>
+<text x="1168" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#66686D">IMAGEN</text>
+<text x="988" y="946" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#66686D">EDUCACIÓN</text>
+<text x="988" y="973" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">Proyectos que conectan</text>
+<text x="988" y="997" font-family="Georgia, Times New Roman, serif" font-size="19" font-weight="700" fill="#25262A">a la comunidad</text>
+<text x="988" y="1025" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#25262A">Ver noticia →</text>
+</g>
+
+<!-- Footer -->
+<line x1="72" y1="1100" x2="1368" y2="1100" stroke="#C0C0C0" stroke-width="1"/>
+<text x="72" y="1140" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="700" fill="#25262A">NEWS POLI</text>
+<text x="72" y="1165" font-family="Arial, sans-serif" font-size="11" fill="#77797E">Información que importa.</text>
+<text x="1368" y="1145" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#77797E">© 2026 News Poli</text>
+<text x="1368" y="1165" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#77797E">Proyecto académico · Desarrollo Front-end</text>
+</svg>
