@@ -23,7 +23,8 @@ Implementación Front-end de la vista **Listado de noticias** para la Entrega Pr
 poli-news/
 ├── index.html
 ├── views/
-│   └── noticias.html
+│   ├── noticias.html
+│   └── contacto.html
 ├── assets/
 │   ├── data/
 │   │   └── noticias.json
@@ -35,9 +36,11 @@ poli-news/
 │   │   ├── tecnologia-innovacion.webp
 │   │   └── educacion-colaborativa.webp
 │   ├── js/
-│   │   └── noticias.js
+│   │   ├── noticias.js
+│   │   └── contacto.js
 │   └── styles/
-│       └── noticias.css
+│       ├── noticias.css
+│       └── contacto.css
 ├── docs/
 │   └── mockups/
 │       ├── listado-preview.png
@@ -88,7 +91,9 @@ La página de detalle **no está implementada en este proyecto**, porque corresp
 
 ## Integración con Home y Contacto
 
-Los elementos **Inicio** y **Contacto** se dejaron como puntos de integración. Mientras esas vistas no existan, muestran un mensaje breve en lugar de navegar a una página inexistente.
+**Contacto** ya está implementado en `views/contacto.html`: formulario con validaciones básicas (campos obligatorios y formato de correo), mensaje de confirmación al enviar, e información de contacto. El header enlaza directamente a esta vista.
+
+**Inicio** se dejó como punto de integración. Mientras esa vista no exista, el enlace del header no navega a una página inexistente.
 
 ## Favoritos
 

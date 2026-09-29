@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contáctanos - NEWS POLI.">
+  <title>NEWS POLI | Contacto</title>
+  <link rel="stylesheet" href="../assets/styles/noticias.css">
+  <link rel="stylesheet" href="../assets/styles/contacto.css">
+</head>
+<body class="np-page">
+  <header class="np-header">
+    <div class="np-shell np-header__inner">
+      <a class="np-brand" href="noticias.html" aria-label="NEWS POLI - Inicio">
+        <span class="np-brand__mark" aria-hidden="true">N</span>
+        <span class="np-brand__name">NEWS POLI</span>
+      </a>
+
+      <button class="np-nav-toggle" type="button" aria-expanded="false" aria-controls="np-main-nav">
+        <span class="np-nav-toggle__label">Menú</span>
+        <span class="np-nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="np-nav" id="np-main-nav" aria-label="Navegación principal">
+        <a class="np-nav__link" href="noticias.html#inicio">Inicio</a>
+        <a class="np-nav__link" href="noticias.html#noticias">Noticias</a>
+        <a class="np-nav__link" href="noticias.html#favoritos">Favoritos</a>
+        <a class="np-nav__link is-active" href="contacto.html" aria-current="page">Contacto</a>
+        <a class="np-nav__cta" href="noticias.html#np-more-news">EXPLORAR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="np-main">
+    <div class="np-shell">
+      <section class="np-intro np-contact-intro" aria-labelledby="np-page-title">
+        <div>
+          <h1 class="np-intro__title" id="np-page-title">Contáctanos</h1>
+          <p class="np-intro__subtitle">Escríbenos y te responderemos lo antes posible.</p>
+        </div>
+        <span class="np-contact-badge">Respondemos en menos de 24h</span>
+      </section>
+
+      <section class="np-contact-grid" aria-label="Formulario e información de contacto">
+        <div class="np-contact-card">
+          <h2 class="np-contact-card__title">Envíanos un mensaje</h2>
+          <p class="np-contact-card__subtitle">Completa el formulario y te contactaremos a la brevedad.</p>
+
+          <form class="np-form" id="np-contact-form" novalidate>
+            <div class="np-form-group" id="np-group-nombre">
+              <label class="np-form-label" for="np-nombre">Nombre *</label>
+              <input class="np-form-input" type="text" id="np-nombre" name="nombre" placeholder="Tu nombre completo" required>
+              <p class="np-form-error" id="np-error-nombre"></p>
+            </div>
+
+            <div class="np-form-group" id="np-group-correo">
+              <label class="np-form-label" for="np-correo">Correo electrónico *</label>
+              <input class="np-form-input" type="email" id="np-correo" name="correo" placeholder="correo@ejemplo.com" required>
+              <p class="np-form-error" id="np-error-correo"></p>
+            </div>
+
+            <div class="np-form-group" id="np-group-mensaje">
+              <label class="np-form-label" for="np-mensaje">Mensaje *</label>
+              <textarea class="np-form-textarea" id="np-mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              <p class="np-form-error" id="np-error-mensaje"></p>
+            </div>
+
+            <div class="np-form-actions">
+              <button class="np-form-submit" type="submit">Enviar mensaje</button>
+            </div>
+
+            <p class="np-form-success" id="np-form-success" role="status" aria-live="polite">
+              <span aria-hidden="true">✓</span> Tu mensaje fue enviado con éxito.
+            </p>
+          </form>
+        </div>
+
+        <aside class="np-contact-card np-contact-info" aria-label="Información de contacto">
+          <h2 class="np-contact-card__title">Información de contacto</h2>
+
+          <ul class="np-info-list">
+            <li class="np-info-item">
+              <span class="np-info-icon" aria-hidden="true">@</span>
+              <div>
+                <p class="np-info-label">Correo</p>
+                <p class="np-info-value">contacto@newspoli.co</p>
+              </div>
+            </li>
+            <li class="np-info-item">
+              <span class="np-info-icon" aria-hidden="true">☎</span>
+              <div>
+                <p class="np-info-label">Teléfono</p>
+                <p class="np-info-value">+57 300 000 0000</p>
+              </div>
+            </li>
+            <li class="np-info-item">
+              <span class="np-info-icon" aria-hidden="true">⏰</span>
+              <div>
+                <p class="np-info-label">Horario de atención</p>
+                <p class="np-info-value">Lunes a viernes, 8:00 a.m. - 5:00 p.m.</p>
+              </div>
+            </li>
+            <li class="np-info-item">
+              <span class="np-info-icon" aria-hidden="true">☺</span>
+              <div>
+                <p class="np-info-label">Síguenos</p>
+                <p class="np-info-value">Instagram · Twitter · LinkedIn</p>
+              </div>
+            </li>
+          </ul>
+
+          <p class="np-info-map__label">Nuestra ubicación</p>
+          <div class="np-info-map__placeholder">MAPA · Bogotá, Colombia</div>
+          <p class="np-info-map__caption">Cra. 7 #71-21, Bogotá, Cundinamarca, Colombia</p>
+        </aside>
+      </section>
+
+      <section class="np-faq" aria-labelledby="np-faq-title">
+        <div class="np-section-heading">
+          <h2 class="np-section-heading__title" id="np-faq-title">Preguntas frecuentes</h2>
+          <span class="np-section-heading__line" aria-hidden="true"></span>
+        </div>
+        <p class="np-faq__intro">Resolvemos las dudas más comunes de nuestros lectores.</p>
+
+        <div class="np-faq__list">
+          <div class="np-faq__item">
+            <h3 class="np-faq__question">¿Cuánto tardan en responder?</h3>
+            <p class="np-faq__answer">Normalmente respondemos en menos de 24 horas hábiles.</p>
+          </div>
+          <div class="np-faq__item">
+            <h3 class="np-faq__question">¿Puedo sugerir un tema para una noticia?</h3>
+            <p class="np-faq__answer">Sí, cuéntanos tu idea en el campo de mensaje del formulario.</p>
+          </div>
+          <div class="np-faq__item">
+            <h3 class="np-faq__question">¿Cómo reporto un error en un artículo?</h3>
+            <p class="np-faq__answer">Escríbenos indicando el título y el enlace de la noticia.</p>
+          </div>
+          <div class="np-faq__item">
+            <h3 class="np-faq__question">¿Ofrecen espacios publicitarios?</h3>
+            <p class="np-faq__answer">Sí, escríbenos a contacto@newspoli.co para más información.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="np-footer">
+    <div class="np-shell np-footer__inner">
+      <div>
+        <p class="np-footer__brand">NEWS POLI</p>
+        <p class="np-footer__tagline">Información que importa.</p>
+      </div>
+      <div class="np-footer__meta">
+        <p>© 2026 News Poli</p>
+        <p>Proyecto académico · Desarrollo Front-end</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="np-toast" id="np-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../assets/js/contacto.js" defer></script>
+</body>
+</html>
