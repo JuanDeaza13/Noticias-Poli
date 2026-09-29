@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../assets/styles/noticias.css">
   <link rel="stylesheet" href="../assets/styles/inicio.css">
 </head>
-<body class="np-page">
+<body class="np-page ni-home">
 
   <!-- ENCABEZADO (idéntico al de noticias.html) -->
   <header class="np-header">
@@ -40,14 +40,22 @@
         <p class="np-intro__subtitle">Información relevante, actual y cercana. Periodismo independiente para un panorama en constante evolución.</p>
       </section>
 
-      <!-- Categorías: enlazan al Listado -->
-      <nav class="ni-cats" aria-label="Categorías">
-        <a href="noticias.html">Todas</a>
-        <a href="noticias.html" data-cat="Tecnología">Tecnología</a>
-        <a href="noticias.html" data-cat="Educación">Educación</a>
-        <a href="noticias.html" data-cat="Turismo">Turismo</a>
-        <a href="noticias.html" data-cat="Comercio">Comercio</a>
-      </nav>
+      <!-- Barra de búsqueda y filtros (mockup) -->
+      <section class="np-toolbar ni-toolbar" aria-label="Buscar y filtrar noticias">
+        <label class="np-search">
+          <span class="np-visually-hidden">Buscar noticias</span>
+          <span class="np-search__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <input class="np-search__input" id="ni-search" type="search" placeholder="Buscar noticias...">
+        </label>
+        <div class="np-filters" id="ni-filters">
+          <button class="np-filter is-active" type="button" data-cat="Todas">Todas</button>
+          <button class="np-filter" type="button" data-cat="Tecnología">Tecnología</button>
+          <button class="np-filter" type="button" data-cat="Educación">Educación</button>
+          <button class="np-filter" type="button" data-cat="Turismo">Turismo</button>
+          <button class="np-filter" type="button" data-cat="Comercio">Comercio</button>
+        </div>
+      </section>
+      <p class="ni-empty" id="ni-empty" hidden>No encontramos noticias con esa búsqueda. Prueba con otra palabra o categoría.</p>
 
       <section class="np-editorial" aria-label="Noticias destacadas">
         <div class="np-featured-slot" id="ni-featured"></div>
@@ -57,8 +65,7 @@
       <section class="np-more" id="np-more-news" aria-labelledby="ni-more-title">
         <div class="np-section-heading">
           <h2 class="np-section-heading__title" id="ni-more-title">Más noticias</h2>
-          <span class="np-section-heading__line"></span>
-          <a class="np-action" href="noticias.html">Ver archivo completo</a>
+          <a class="np-action ni-archive" href="noticias.html">Ver archivo completo</a>
         </div>
         <div class="np-news-grid" id="ni-grid"></div>
       </section>
