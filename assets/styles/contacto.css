@@ -1,0 +1,296 @@
+/* NEWS POLI - Página de Contacto. Extiende las variables y el header/footer de noticias.css con estilos prefijados np-contact-*. */
+
+.np-contact-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.np-contact-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--np-ink);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.np-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(300px, 1fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 6px;
+}
+
+.np-contact-card {
+  background: var(--np-surface);
+  border: 1px solid var(--np-line);
+  border-radius: var(--np-radius-lg);
+  padding: 32px;
+}
+
+.np-contact-card__title {
+  margin: 0 0 6px;
+  font-family: var(--np-serif);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.np-contact-card__subtitle {
+  margin: 0 0 24px;
+  color: var(--np-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Form */
+.np-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.np-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.np-form-label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.np-form-input,
+.np-form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--np-slate);
+  border-radius: 8px;
+  background: var(--np-bg);
+  color: var(--np-ink);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.np-form-input::placeholder,
+.np-form-textarea::placeholder {
+  color: #77797E;
+}
+
+.np-form-input:focus,
+.np-form-textarea:focus {
+  border-color: var(--np-ink);
+  box-shadow: 0 0 0 3px rgba(37, 38, 42, 0.08);
+}
+
+.np-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.np-form-error {
+  margin: 0;
+  color: #b82626;
+  font-size: 12px;
+  min-height: 15px;
+}
+
+.np-form-group.is-invalid .np-form-input,
+.np-form-group.is-invalid .np-form-textarea {
+  border-color: #b82626;
+}
+
+.np-form-actions {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.np-page .np-form-submit {
+  min-width: 190px;
+  min-height: 46px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--np-ink);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.np-form-submit:hover,
+.np-form-submit:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(37, 38, 42, 0.22);
+}
+
+.np-form-success {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--np-ink);
+  border-radius: 8px;
+  background: var(--np-bg);
+  color: var(--np-ink);
+  font-size: 13px;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.np-form-success.is-visible {
+  display: flex;
+}
+
+/* Info panel */
+.np-contact-info {
+  background: var(--np-bg);
+}
+
+.np-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.np-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.np-info-icon {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--np-ink);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.np-info-label {
+  margin: 0;
+  color: var(--np-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.np-info-value {
+  margin: 2px 0 0;
+  font-size: 14px;
+}
+
+.np-info-map__label {
+  margin: 0 0 12px;
+  color: var(--np-muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.np-info-map__placeholder {
+  min-height: 190px;
+  border: 1px solid var(--np-line);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--np-soft);
+  color: var(--np-ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.np-info-map__caption {
+  margin: 10px 0 0;
+  color: var(--np-muted);
+  font-size: 12px;
+}
+
+/* FAQ */
+.np-faq {
+  padding-top: 44px;
+}
+
+.np-faq__intro {
+  margin: 4px 0 26px;
+  color: var(--np-muted);
+  font-size: 13px;
+}
+
+.np-faq__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.np-faq__item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--np-line);
+}
+
+.np-faq__item:first-child {
+  padding-top: 0;
+}
+
+.np-faq__item:last-child {
+  border-bottom: 0;
+}
+
+.np-faq__question {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.np-faq__answer {
+  margin: 0;
+  color: var(--np-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .np-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .np-contact-card {
+    padding: 20px;
+  }
+
+  .np-contact-badge {
+    font-size: 11px;
+  }
+
+  .np-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .np-form-submit {
+    width: 100%;
+  }
+}
