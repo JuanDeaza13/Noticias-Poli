@@ -1,15 +1,12 @@
-/* NEWS POLI - Inicio (jQuery)
- * Lee assets/data/noticias.json y pinta: noticia destacada, 2 secundarias
- * y 3 en "Más noticias". Comparte con el Listado la clave de favoritos. */
 $(function () {
   'use strict';
 
   var DATA_URL = '../assets/data/noticias.json';
-  var FAV_KEY = 'newsPoliFavorites';   // misma clave que noticias.js
+  var FAV_KEY = 'newsPoliFavorites';
   var DETALLE = './detalle.html';
   var toastTimer;
 
-  /* ---------- Utilidades ---------- */
+  // Utilidades
   function esc(t) { return $('<div>').text(t == null ? '' : t).html(); }
 
   function leerFavoritos() {
@@ -32,7 +29,7 @@ $(function () {
     return DETALLE + '?id=' + encodeURIComponent(n.id) + '&slug=' + encodeURIComponent(n.slug || '');
   }
 
-  /* ---------- Plantillas ---------- */
+  //Plantillas
   function btnFav(n, extra) {
     var on = leerFavoritos().indexOf(Number(n.id)) > -1;
     return '<button class="np-favorite ' + extra + (on ? ' is-favorite' : '') + '" type="button" data-id="' + n.id +
@@ -40,7 +37,7 @@ $(function () {
       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></button>';
   }
   function img(n) { return '<img src="' + esc(n.imagen) + '" alt="' + esc(n.alt || n.titulo) + '" loading="lazy">'; }
-  function enlace(n, txt) { return '<a class="np-action np-action--detail" href="' + urlDetalle(n) + '">' + txt + ' <span aria-hidden="true">→</span></a>'; }
+  function enlace(n, txt, simbolo) { return '<a class="np-action np-action--detail" href="' + urlDetalle(n) + '">' + txt + ' <span aria-hidden="true">' + (simbolo || '→') + '</span></a>'; }
 
   function destacada(n) {
     return '<article class="np-news-card np-featured-card">' +
@@ -56,33 +53,58 @@ $(function () {
       '<div class="np-secondary-card__media">' + img(n) + '</div>' +
       '<div class="np-secondary-card__content"><p class="np-news-meta">' + esc(n.categoria) + '</p>' +
       '<h3 class="np-secondary-card__title">' + esc(n.titulo) + '</h3>' +
-      '<div class="np-card-actions np-card-actions--compact">' + enlace(n, 'Ver más') + '</div></div>' +
-      btnFav(n, 'np-favorite--corner') + '</article>';
+      '<div class="np-card-actions np-card-actions--compact">' + enlace(n, 'Ver más', '+') + '</div></div>' +
+      '</article>';
   }
   function tarjeta(n) {
     return '<article class="np-news-card np-grid-card">' +
-      '<div class="np-grid-card__media">' + img(n) + btnFav(n, 'np-favorite--media') + '</div>' +
+      '<div class="np-grid-card__media">' + img(n) + '</div>' +
       '<div class="np-grid-card__content"><p class="np-news-meta">' + esc(n.categoria) + '</p>' +
       '<h3 class="np-grid-card__title">' + esc(n.titulo) + '</h3>' +
       '<div class="np-card-actions np-card-actions--grid">' + enlace(n, 'Ver noticia') + '</div></div></article>';
   }
 
-  /* ---------- Carga de noticias ---------- */
-  $('#ni-featured').html('<p class="ni-loading">Cargando noticias…</p>');
+  //Carga, búsqueda y filtros
+  var todas = [], categoria = 'Todas', consulta = '';
 
-  $.getJSON(DATA_URL).done(function (lista) {
-    lista.sort(function (a, b) { return (a.orden || 0) - (b.orden || 0); });
+  function normalizar(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+
+  function pintar() {
+    var lista = todas.filter(function (n) {
+      var okCat = categoria === 'Todas' || n.categoria === categoria;
+      var texto = normalizar([n.titulo, n.descripcion, n.categoria, n.autor].join(' '));
+      return okCat && texto.indexOf(normalizar(consulta)) > -1;
+    });
+    var vacio = lista.length === 0;
+    $('#ni-empty').prop('hidden', !vacio);
+    $('.np-editorial, #np-more-news').toggle(!vacio);
+    if (vacio) { return; }
     var principal = lista.filter(function (n) { return n.destacada; })[0] || lista[0];
     var resto = lista.filter(function (n) { return n !== principal; });
+    $('#ni-featured').html(destacada(principal)).hide().fadeIn(300);
+    $('#ni-secondary').html(resto.slice(0, 2).map(secundaria).join('')).hide().fadeIn(300);
+    $('#ni-grid').html(resto.slice(2, 5).map(tarjeta).join(''));
+    $('#np-more-news').toggle(resto.length > 2);
+  }
 
-    $('#ni-featured').hide().html(destacada(principal)).fadeIn(400);
-    $('#ni-secondary').hide().html(resto.slice(0, 2).map(secundaria).join('')).fadeIn(500);
-    $('#ni-grid').hide().html(resto.slice(2, 5).map(tarjeta).join('')).fadeIn(600);
+  $('#ni-featured').html('<p class="ni-loading">Cargando noticias…</p>');
+  $.getJSON(DATA_URL).done(function (lista) {
+    lista.sort(function (a, b) { return (a.orden || 0) - (b.orden || 0); });
+    todas = lista;
+    pintar();
   }).fail(function () {
     $('#ni-featured').html('<p class="ni-loading">No se pudieron cargar las noticias. Abre el sitio con un servidor (Live Server o GitHub Pages).</p>');
   });
 
-  /* ---------- Favoritos (delegación de eventos con on()) ---------- */
+  $('#ni-search').on('input', function () { consulta = $.trim($(this).val()); pintar(); });
+  $('#ni-filters').on('click', '.np-filter', function () {
+    categoria = $(this).data('cat');
+    $('.np-filter').removeClass('is-active').attr('aria-pressed', 'false');
+    $(this).addClass('is-active').attr('aria-pressed', 'true');
+    pintar();
+  });
+
+  // Favoritos (delegación de eventos con on())
   $(document).on('click', '.np-favorite', function () {
     var id = Number($(this).data('id'));
     var fav = leerFavoritos();
@@ -95,14 +117,14 @@ $(function () {
       .attr('aria-pressed', pos === -1);
   });
 
-  /* ---------- Menú móvil ---------- */
+  // Menú móvil
   $('.np-nav-toggle').on('click', function () {
     var abierto = $(this).attr('aria-expanded') === 'true';
     $(this).attr('aria-expanded', !abierto);
     $('#np-main-nav').toggleClass('is-open', !abierto);
   });
 
-  /* ---------- Suscripción: validación y mensaje ---------- */
+  // Suscripción: validación y mensaje
   $('#ni-form').on('submit', function (e) {
     e.preventDefault();
     var correo = $.trim($('#ni-mail').val());
